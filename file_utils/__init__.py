@@ -1,3 +1,3 @@
 from .filesystem import *
-from .video import *
+from .video_frames import *
 from .dataset import *
