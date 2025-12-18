@@ -4,8 +4,10 @@ def timer(function, *args, **kargs):
     """
     Permite cronometrar cuanto tarda una función en ejecutarse e imprime el tiempo en minutos.
     
-    :param function: Función a cronometrar.
-    :param 'args','kargs': Argumentos de la función.
+    :param function: def
+        Función a cronometrar.
+    :param 'args','kargs': arguments
+        Argumentos de la función.
     """
     start = time.perf_counter()
     function(*args, **kargs)

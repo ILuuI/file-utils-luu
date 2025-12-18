@@ -2,6 +2,14 @@ import os
 import shutil
 
 def move_folder(input_folder, output_folder):
+    """
+    Mover una carpeta hacia una ruta.
+    
+    :param input_folder: str
+        Carpeta raíz.
+    :param output_folder: str
+        Carpeta destino.
+    """
     if not os.path.isdir(input_folder):
         raise FileNotFoundError(f"Source folder not found: {input_folder}")
 
@@ -11,6 +19,14 @@ def move_folder(input_folder, output_folder):
     return dest_path
 
 def move_folder_contents(input_folder, output_folder):
+    """
+    Mover el contenido de una carpeta hacia una ruta.
+    
+    :param input_folder: str
+        Carpeta raíz.
+    :param output_folder: str
+        Carpeta destino.
+    """
     if not os.path.isdir(input_folder):
         raise FileNotFoundError(input_folder)
 
@@ -23,12 +39,24 @@ def move_folder_contents(input_folder, output_folder):
         )
 
 def delete_folder(folder_path):
+    """
+    Eliminar carpeta.
+    
+    :param folder_path: str
+        Carpeta raíz.
+    """
     if not os.path.isdir(folder_path):
         return False
     shutil.rmtree(folder_path)
     return True
 
 def clear_folder(folder_path):
+    """
+    Eliminar el contenido de una carpeta.
+    
+    :param folder_path : str
+        Ruta de la carpeta.
+    """
     if not os.path.isdir(folder_path):
         return False
 
