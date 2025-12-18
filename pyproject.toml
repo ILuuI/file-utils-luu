@@ -7,4 +7,4 @@ name = "file-utils-luugap"
 version = "0.1.0"
 description = "Utility library for preprocessing datasets, videos, images, and file system operations"
 authors = [{name = "LuuGap"}]
-dependencies = ["pandas", "natsort"]
+dependencies = ["pandas", "natsort", "opencv-python"]
