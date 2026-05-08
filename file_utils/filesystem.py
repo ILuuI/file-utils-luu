@@ -38,7 +38,7 @@ def move_folder_contents(input_folder, output_folder):
             os.path.join(output_folder, item)
         )
 
-def delete_folder(folder_path):
+def delete_folder_by_path(folder_path):
     """
     Eliminar carpeta.
     
@@ -68,3 +68,27 @@ def clear_folder(folder_path):
             shutil.rmtree(path)
     return True
 
+def delete_folder_by_index(root_path, index="_aligned"):
+    """
+    Eliminar toda carpeta cuyo nombre contenga el indice.
+    
+    :param folder_path : str
+        Ruta de la carpeta.
+    """
+    for current_folder, subfolders, files in os.walk(root_path, topdown=False):
+        for subfolder in subfolders:
+            if index in subfolder:
+                full_path = os.path.join(current_folder, subfolder)
+                print(f"[{i}] Deleting: {full_path}")
+                shutil.rmtree(full_path)
+                i += 1
+                
+    print(f"Process completed, Folders: {i-1}")
+
+
+arr = [r"E:\datasets\mdpe\lie_ready\batch_1_2_3",
+       r"E:\datasets\mdpe\lie_ready\batch_4_5_6",
+       r"E:\datasets\mdpe\lie_ready\batch_7_8_9"]
+
+for i in arr:
+    delete_folder_by_index(root_path=i)
